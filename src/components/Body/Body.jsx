@@ -1,37 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
-import { SWIGGY_API } from '../../utils/constants';
-import RestaurantCard from '../RestaurantCard/RestaurantCard';
+import MenuCard from '../MenuCard/MenuCard';
+import menuList from '../../utils/mockData';
 
 const Body = () => {
 
     const [data, setData] = useState([]);
-
+    
     useEffect(()=> {
-        fetchData();
-    }, []);
-
-    const fetchData = async () => {
-        const response = await fetch(SWIGGY_API);
-        const json = await response.json();
-        
-        const resData = json.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        setData(resData);
-    }
+        setData(menuList)
+    }, [])
+  
+    console.log(data);
     
     
     
 
   return (
-    <div >
+    <div>
         <SearchBar/>
+        <div className='flex flex-wrap'>
         {
-            data?.map(item => <RestaurantCard resData={item} />)
+            data?.map( (item, index) => (<MenuCard key={index} resData={item}/>)  )
         }
-
-        {/* {
-            data?.map(item => <p>{item}</p>)
-        } */}
+        </div>
+        
+        
     </div>
   )
 }
