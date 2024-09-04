@@ -17,9 +17,9 @@ const Body = () => {
     
 
   return (
-    <div>
+    <div >
         <SearchBar/>
-        <div className='flex flex-wrap'>
+        <div className='flex flex-wrap justify-evenly'>
         {
             data?.map( (item, index) => (<MenuCard key={index} resData={item}/>)  )
         }
