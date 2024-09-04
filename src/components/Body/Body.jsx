@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 import MenuCard from '../MenuCard/MenuCard';
-import menuList from '../../utils/mockData';
 
-const Body = () => {
-
-    const [data, setData] = useState([]);
+const Body = (props) => {
     
-    useEffect(()=> {
-        setData(menuList)
-    }, [])
-  
-    console.log(data);
-    
-    
+    const { menuData } = props
     
 
   return (
@@ -21,7 +12,7 @@ const Body = () => {
         <SearchBar/>
         <div className='flex flex-wrap justify-evenly'>
         {
-            data?.map( (item, index) => (<MenuCard key={index} resData={item}/>)  )
+            menuData?.map( (item, index) => (<MenuCard key={index} resData={item}/>)  )
         }
         </div>
         
