@@ -5,13 +5,9 @@ import Body from './components/Body/Body'
 import menuList from './utils/mockData';
 import Footer from './components/Footer/Footer';
 
+
 function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(()=> {
-    setData(menuList);
-  },[])
-
+  const data = menuList;
 
   return (
     <>
@@ -23,11 +19,40 @@ function App() {
 }
 
 
-
-
-
-
-
 export default App
+
+// export const appRoutes = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App/>,
+//     children: [
+//       {
+//         path: "/",
+//         element: <Body menuData={[]}/>
+//       },
+//       {
+//         path: "/about",
+//         element:<About/>
+
+//       },
+//       {
+//         path: "/contact",
+//         element: <Contact/>
+//       },
+//       {
+//         path: "/cart",
+//         element: <Cart/>
+//       }
+//     ],
+//     errorElement: <Error/>
+//   }
+// ])
+
+
+
+
+
+
+
 
 

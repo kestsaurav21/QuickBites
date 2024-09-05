@@ -10,7 +10,7 @@ const MenuCard = ({ resData }) => {
         <img className="h-40 w-full object-cover rounded-md" src={img} />
       </div>
 
-      <div className="flex-col items-center m-4">
+      <div className="flex-col items-center m-2">
         <h3 className="font-bold py-4 text-lg text-center">{name}</h3>
         <h4 className="font-bold  text-sm text-center">{country}</h4>
         <p className="font-medium py-2 text-center text-sm">{dsc}</p>
