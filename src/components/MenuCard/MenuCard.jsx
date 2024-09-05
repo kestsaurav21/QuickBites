@@ -11,9 +11,9 @@ const MenuCard = ({ resData }) => {
       </div>
 
       <div className="flex-col items-center m-2">
-        <h3 className="font-bold py-4 text-lg text-center">{name}</h3>
+        <h3 className="font-bold py-2 text-lg text-center truncate ...">{name}</h3>
         <h4 className="font-bold  text-sm text-center">{country}</h4>
-        <p className="font-medium py-2 text-center text-sm">{dsc}</p>
+        <p className="font-medium py-2 text-center text-sm truncate ...">{dsc}</p>
 
         <div className="flex justify-evenly">
           <h4 className="font-bold">₹{price} </h4>
@@ -23,7 +23,7 @@ const MenuCard = ({ resData }) => {
           </h4>
         </div>
 
-        <button className="m-2 bg-orange-600 text-white font-bold rounded-xl w-full p-2 cursor-pointer">
+        <button className=" mt-4 bg-orange-600 text-white font-bold rounded-xl w-full p-2 cursor-pointer justify-center">
           Add +
         </button>
       </div>
