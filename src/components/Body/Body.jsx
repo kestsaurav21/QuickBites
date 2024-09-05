@@ -30,16 +30,24 @@ const Body = ({ menuData }) => {
       
       if(e.target.value === "Featured") setData(menuData);
 
-      else if (e.target.value === "Top Rated"){
+      if (e.target.value === "Top Rated"){
         const arr = menuData?.filter((item) => 
           item.rate > 4 
         )
         setData(arr)
       }
-      else if(e.target.value === "Low Price"){
-        const sortArr = menuData.sort((a,b)=> a.price - b.price);
+      if(e.target.value === "Low Price"){
+        const sortArr = [...menuData].sort((a,b) => a.price - b.price);
+        console.log(sortArr);
+        
         setData(sortArr);
 
+      }
+      if(e.target.value === "High Price"){
+        const sortArr = [...menuData].sort((a,b) => b.price - a.price);
+        console.log(sortArr);
+        
+        setData(sortArr);
       }
       
      
@@ -64,6 +72,7 @@ const Body = ({ menuData }) => {
         <option value="Featured">Featured</option>
         <option value="Top Rated">Top Rated</option>
         <option value="Low Price">Low Price</option>
+        <option value="High Price">High Price</option>
         </select>
         </div>
 
